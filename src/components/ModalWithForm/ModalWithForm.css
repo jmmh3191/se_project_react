@@ -6,4 +6,120 @@
   bottom: 0;
   background-color: #0000004d;
   display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal__content {
+  color-scheme: light;
+  background-color: #fff;
+  position: relative;
+  padding: 28px 28px 36px;
+  max-width: 496px;
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 20px;
+}
+
+.modal__title {
+  margin: 0;
+  margin-bottom: 24px;
+  font-family: "Cabinet Grotesk", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.modal__close-btn {
+  position: absolute;
+  top: 20px;
+  right: 28px;
+  width: 20px;
+  height: 20px;
+  display: block;
+  background-image: url("../src/images/close-icon.svg"); /* Double-check your path! */
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none;
+  padding: 0;
+}
+
+.modal__form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 20px;
+}
+
+.modal__input[type="text"],
+.modal__input[type="url"] {
+  display: block;
+  width: 100%;
+  padding: 0;
+  font-family: "Cabinet Grotesk", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 20px;
+  background-color: #fff;
+  color: rgba(0, 0, 0, 0.5);
+  border: none;
+  border-bottom: 1px solid #000;
+  outline: none;
+}
+
+.modal__radio-buttons {
+  margin-bottom: 8px;
+  border: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal__legend {
+  font-family: "Cabinet Grotesk", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 20px;
+  margin-bottom: 12px;
+  padding: 0;
+}
+
+.modal__label_type_radio {
+  font-family: "Cabinet Grotesk", Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.modal__radio-input {
+  accent-color: #000;
+  margin-right: 10px;
+}
+
+.modal__radio-text {
+  color: rgba(0, 0, 0, 0.5);
+  transition: color 0.2s ease;
+}
+
+.modal__radio-input:checked + .modal__radio-text {
+  color: #000;
+}
+
+.modal__label_type_radio {
+  margin-bottom: 8px;
+}
+
+.modal__garment-submit {
+  font-family: "Cabinet Grotesk", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 20px;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.3);
+  opacity: 1;
+  border-radius: 4px;
+  border: none;
+  padding-top: 8px;
+  padding-right: 16px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  width: 124px;
+  height: 36px;
 }
