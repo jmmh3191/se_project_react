@@ -19,10 +19,12 @@
 .weather-card__temp {
   font-family: "Cabinet Grotesk", Helvetica, Arial, sans-serif;
   font-size: 36px;
+  font-style: Bold;
   line-height: 40px;
   margin: 0;
   position: absolute;
   top: 20px;
   left: 16px;
   z-index: 1;
+  color: rgba(255, 255, 255, 1);
 }
