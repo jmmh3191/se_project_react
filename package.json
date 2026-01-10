@@ -5,7 +5,7 @@
   "type": "module",
   "homepage": "https://jmmh3191.github.io/se_project_react/",
   "scripts": {
-    "dev": "BROWSER='google chrome' vite --open -- --guest",
+    "dev": "vite --open",
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
