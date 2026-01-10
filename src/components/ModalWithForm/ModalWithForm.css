@@ -41,7 +41,6 @@
   width: 20px;
   height: 20px;
   display: block;
-  background-image: url("../src/images/close-icon.svg"); /* Double-check your path! */
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;

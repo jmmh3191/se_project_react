@@ -1,0 +1,39 @@
+.modal__caption {
+  font-family: "Cabinet Grotesk", Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.modal__weather {
+  font-family: "Cabinet Grotesk", Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.modal__content_type_image {
+  border-radius: 16px;
+  overflow: hidden;
+  padding: 0;
+  width: 100%;
+  max-width: 498px;
+}
+
+.modal__image {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.modal__footer {
+  padding: 20px;
+}
+
+.modal__close-btn {
+  top: 16px;
+  right: 16px;
+  background: url("../../images/item-modal-close-icon.svg") center no-repeat;
+  border: none;
+  cursor: pointer;
+}
