@@ -1,5 +1,7 @@
 # WTWR (What to Wear)
 
+[Live Link](https://jmmh3191.github.io/se_project_react/)
+
 ## Description
 
 A React-based weather application that provides clothing recommendations based on real-time, location-based weather conditions. The app fetches data from the OpenWeather API and filters a clothing collection to suggest the most appropriate outfit for the current temperature.
