@@ -3,7 +3,7 @@ import closeIcon from "../../images/close-icon.svg";
 import { useOutsideClick } from "../../hooks/useOutsideClick";
 
 function ModalWithForm({ children, buttonText, title, isOpen, name, onClose }) {
-  const handleOverlayClick = useOutsideClick(onClose);
+  const handleOverlayClick = useOutsideClick(onClose, isOpen);
 
   return (
     <div

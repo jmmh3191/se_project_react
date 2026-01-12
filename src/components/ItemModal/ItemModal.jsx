@@ -2,7 +2,8 @@ import "./ItemModal.css";
 import { useOutsideClick } from "../../hooks/useOutsideClick";
 
 function ItemModal({ activeModal, onClose, item }) {
-  const handleOverlayClick = useOutsideClick(onClose);
+  const isModalOpen = activeModal === "preview";
+  const handleOverlayClick = useOutsideClick(onClose, isModalOpen);
 
   return (
     <div
