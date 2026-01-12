@@ -1,15 +1,21 @@
 import { useEffect, useState } from "react";
 
 import "./App.css";
-import { coordinates, APIkey } from "../../utils/constants.js";
+import {
+  coordinates,
+  APIkey,
+  defaultClothingItems,
+} from "../../utils/constants.js";
 import Header from "../Header/Header.jsx";
 import Main from "../Main/Main.jsx";
-import Footer from "../Footer/footer.jsx";
+import Footer from "../Footer/Footer.jsx";
 import ModalWithForm from "../ModalWithForm/ModalWithForm.jsx";
 import ItemModal from "../ItemModal/ItemModal.jsx";
 import { getWeather, filterWeatherData } from "../../utils/weatherApi.js";
 
 function App() {
+  const [clothingItems, setClothingItems] = useState(defaultClothingItems);
+
   const [weatherData, setWeatherData] = useState({
     type: "",
     temp: { F: 999 },
@@ -44,12 +50,18 @@ function App() {
     <div className="app">
       <div className="app__content">
         <Header handleAddClick={handleAddClick} weatherData={weatherData} />
-        <Main weatherData={weatherData} handleCardClick={handleCardClick} />
+        <Main
+          weatherData={weatherData}
+          handleCardClick={handleCardClick}
+          clothingItems={clothingItems}
+        />
         <Footer />
       </div>
       <ModalWithForm
         title="New garment"
         buttonText="Add garment"
+        name="add-garment"
+        isOpen={activeModal === "add-garment"}
         activeModal={activeModal}
         onClose={closeActiveModal}
       >
@@ -60,6 +72,7 @@ function App() {
             className="modal__input"
             id="name"
             placeholder="Name"
+            required
           />
         </label>
         <label htmlFor="imageUrl" className="modal__label">
@@ -69,6 +82,7 @@ function App() {
             className="modal__input"
             id="imageUrl"
             placeholder="Image URL"
+            required
           />
         </label>
         <fieldset className="modal__radio-buttons">
@@ -79,7 +93,7 @@ function App() {
               id="hot"
               type="radio"
               className="modal__radio-input"
-              defaultChecked
+              value="hot"
             />
             <span className="modal__radio-text">Hot</span>
           </label>
@@ -92,6 +106,7 @@ function App() {
               id="warm"
               type="radio"
               className="modal__radio-input"
+              value="warm"
             />
             <span className="modal__radio-text">Warm</span>
           </label>
@@ -104,6 +119,7 @@ function App() {
               id="cold"
               type="radio"
               className="modal__radio-input"
+              value="cold"
             />
             <span className="modal__radio-text">Cold</span>
           </label>
