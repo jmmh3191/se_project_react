@@ -15,14 +15,16 @@ function Header({ handleAddClick, weatherData }) {
       <p className="header__date-location">
         {currentDate}, {weatherData.city}
       </p>
-      <ToggleSwitch />
-      <button
-        onClick={handleAddClick}
-        type="button"
-        className="header__add-clothes-btn"
-      >
-        + Add clothes
-      </button>
+      <div className="header__user-controls">
+        <ToggleSwitch />
+        <button
+          onClick={handleAddClick}
+          type="button"
+          className="header__add-clothes-btn"
+        >
+          + Add clothes
+        </button>
+      </div>
       <div className="header__user-container">
         <p className="header__username">Terrence Tegegne</p>
         <img
