@@ -14,23 +14,23 @@ import ItemModal from "../ItemModal/ItemModal.jsx";
 import { getWeather, filterWeatherData } from "../../utils/weatherApi.js";
 
 function App() {
-  const [clothingItems, setClothingItems] = useState(defaultClothingItems);
-
   const [weatherData, setWeatherData] = useState({
     type: "",
     temp: { F: 999 },
     city: "",
   });
+
+  const [clothingItems, setClothingItems] = useState(defaultClothingItems);
   const [activeModal, setActiveModal] = useState("");
   const [selectedCard, setSelectedCard] = useState({});
+
+  const handleAddClick = () => {
+    setActiveModal("add-garment");
+  };
 
   const handleCardClick = (item) => {
     setActiveModal("preview");
     setSelectedCard(item);
-  };
-
-  const handleAddClick = () => {
-    setActiveModal("add-garment");
   };
 
   const closeActiveModal = () => {
@@ -44,6 +44,10 @@ function App() {
         setWeatherData(filteredData);
       })
       .catch(console.error);
+  }, []);
+
+  useEffect(() => {
+    setClothingItems(defaultClothingItems);
   }, []);
 
   return (
