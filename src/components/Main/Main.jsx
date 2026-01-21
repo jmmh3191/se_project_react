@@ -12,8 +12,11 @@ function Main({ weatherData, handleCardClick, clothingItems }) {
       <WeatherCard weatherData={weatherData} />
       <section className="cards">
         <p className="cards__text">
-          Today is {getEffectiveTemp(weatherData, currentTemperatureUnit)} &deg;{" "}
-          {currentTemperatureUnit} / You may want to wear:
+          Today is {getEffectiveTemp(weatherData, currentTemperatureUnit)}
+          {weatherData.temp[currentTemperatureUnit] !== null && (
+            <> &deg; {currentTemperatureUnit}</>
+          )}{" "}
+          / You may want to wear:
         </p>
         <ul className="cards__list">
           {clothingItems

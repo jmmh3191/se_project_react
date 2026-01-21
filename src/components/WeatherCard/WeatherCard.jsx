@@ -10,8 +10,10 @@ function WeatherCard({ weatherData }) {
     <section className="weather-card">
       <img src={sunny} alt="sunny" className="weather-card__image" />
       <p className="weather-card__temp">
-        {getEffectiveTemp(weatherData, currentTemperatureUnit)} &deg;
-        {currentTemperatureUnit}
+        {getEffectiveTemp(weatherData, currentTemperatureUnit)}
+        {weatherData.temp[currentTemperatureUnit] !== null && (
+          <> &deg; {currentTemperatureUnit}</>
+        )}
       </p>
     </section>
   );

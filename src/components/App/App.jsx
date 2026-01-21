@@ -13,11 +13,12 @@ import ModalWithForm from "../ModalWithForm/ModalWithForm.jsx";
 import ItemModal from "../ItemModal/ItemModal.jsx";
 import { getWeather, filterWeatherData } from "../../utils/weatherApi.js";
 import CurrentTemperatureUnitContext from "../../contexts/CurrentTemperatureUnitContext.jsx";
+import AddItemModal from "../AddItemModal/AddItemModal";
 
 function App() {
   const [weatherData, setWeatherData] = useState({
     type: "",
-    temp: { F: 999 },
+    temp: { F: null, C: null },
     city: "",
   });
 
@@ -32,6 +33,18 @@ function App() {
       : setCurrentTemperatureUnit("F");
   };
 
+  const closeActiveModal = () => {
+    setActiveModal("");
+  };
+
+  const handleAddItemSubmit = (values, resetForm) => {
+    setClothingItems([values, ...clothingItems]);
+
+    resetForm();
+
+    closeActiveModal();
+  };
+
   const handleAddClick = () => {
     setActiveModal("add-garment");
   };
@@ -39,10 +52,6 @@ function App() {
   const handleCardClick = (item) => {
     setActiveModal("preview");
     setSelectedCard(item);
-  };
-
-  const closeActiveModal = () => {
-    setActiveModal("");
   };
 
   useEffect(() => {
@@ -147,6 +156,11 @@ function App() {
           activeModal={activeModal}
           item={selectedCard}
           onClose={closeActiveModal}
+        />
+        <AddItemModal
+          isOpen={activeModal === "create"}
+          onAddItem={handleAddItemSubmit}
+          onCloseModal={closeActiveModal}
         />
       </div>
     </CurrentTemperatureUnitContext.Provider>

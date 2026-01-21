@@ -127,3 +127,7 @@
   width: 124px;
   height: 36px;
 }
+
+.modal__garment-submit:hover {
+  background-color: rgba(0, 0, 0, 0.6);
+}
