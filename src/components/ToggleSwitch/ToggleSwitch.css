@@ -21,6 +21,7 @@
   top: -2px;
   left: -2px;
   transition: all 0.2s;
+  z-index: 1;
 }
 
 .toggle-switch__text {
@@ -29,24 +30,31 @@
   font-weight: 700;
   font-size: 14px;
   top: 2px;
+  z-index: 2;
 }
 
 .toggle-switch__text_F {
-  color: rgba(255, 255, 255, 1);
   left: 7px;
 }
 
 .toggle-switch__text_C {
-  color: rgba(0, 0, 0, 0.5);
   right: 7px;
 }
 
-.toggle-switch:hover .toggle-switch__text_C {
-  color: rgba(0, 0, 0, 1);
+.toggle-switch__text_color_white {
+  color: white;
+}
+
+.toggle-switch__text_color_grey {
+  color: rgba(0, 0, 0, 0.5);
 }
 
 .toggle-switch:hover .toggle-switch__text {
   transform: translateX(2px);
+}
+
+.toggle-switch:hover .toggle-switch__text_color_grey {
+  color: black;
 }
 
 .toggle-switch__checkbox:checked ~ .toggle-switch__circle {
