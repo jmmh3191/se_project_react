@@ -39,13 +39,9 @@ function App() {
         resetForm();
         closeActiveModal();
       })
-      .catch(console.error);
-
-    setClothingItems([newItem, ...clothingItems]);
-
-    resetForm();
-
-    closeActiveModal();
+      .catch((err) => {
+        console.error(err);
+      });
   };
 
   const handleAddClick = () => {
@@ -57,15 +53,13 @@ function App() {
     setSelectedCard(item);
   };
 
-  const handleDeleteItem = (itemToDelete) => {
-    deleteItem(itemToDelete.id || itemToDelete._id) // json-server usually uses .id
+  const handleDeleteItem = (card) => {
+    deleteItem(card.id)
       .then(() => {
-        setClothingItems((prevItems) =>
-          prevItems.filter(
-            (item) =>
-              item.id !== itemToDelete.id && item._id !== itemToDelete._id,
-          ),
-        );
+        const updatedItems = clothingItems.filter((item) => {
+          return item.id !== card.id;
+        });
+        setClothingItems(updatedItems);
         closeActiveModal();
       })
       .catch(console.error);
