@@ -31,3 +31,8 @@ const getWeatherType = (temperature) => {
     return "cold";
   }
 };
+
+export const getEffectiveTemp = (weatherData, unit) => {
+  const temp = weatherData?.temp?.[unit];
+  return temp !== undefined ? Math.round(temp) : "--";
+};
