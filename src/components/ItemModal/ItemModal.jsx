@@ -1,7 +1,7 @@
 import "./ItemModal.css";
 import { useOutsideClick } from "../../hooks/useOutsideClick";
 
-function ItemModal({ activeModal, onClose, item }) {
+function ItemModal({ activeModal, onClose, item, onDeleteItem }) {
   const isModalOpen = activeModal === "preview";
   const handleOverlayClick = useOutsideClick(onClose, isModalOpen);
 
@@ -18,16 +18,18 @@ function ItemModal({ activeModal, onClose, item }) {
         ></button>
         <img src={item.link} alt={item.name} className="modal__image" />
         <div className="modal__footer">
-          <h2 className="modal__caption">{item.name}</h2>
-          <p className="modal__weather">Weather: {item.weather}</p>
+          <div className="modal__footer-text">
+            <h2 className="modal__caption">{item.name}</h2>
+            <p className="modal__weather">Weather: {item.weather}</p>
+          </div>
+          <button
+            type="button"
+            className="modal__delete-btn"
+            onClick={() => onDeleteItem(item)}
+          >
+            Delete item
+          </button>
         </div>
-        <button
-          type="button"
-          className="modal__delete-btn"
-          onClick={() => onDeleteItem(item)}
-        >
-          Delete item
-        </button>
       </div>
     </div>
   );

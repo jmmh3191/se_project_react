@@ -1,5 +1,13 @@
+.modal__content {
+  position: relative;
+  background-color: #fff;
+  border-radius: 20px;
+}
+
 .modal__caption {
   font-family: "Cabinet Grotesk", Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
   font-weight: 700;
   font-size: 20px;
   line-height: 24px;
@@ -23,11 +31,24 @@
 .modal__image {
   width: 100%;
   display: block;
+  height: auto;
   object-fit: cover;
 }
 
 .modal__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
   padding: 20px;
+  background-color: #fff;
+}
+
+.modal__delete-btn {
+  background: transparent;
+  border: none;
+  padding: 0;
+  color: rgba(255, 77, 0, 1);
+  margin-top: 0;
 }
 
 .modal__close-btn {
