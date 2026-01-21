@@ -58,6 +58,15 @@ function App() {
     setSelectedCard(item);
   };
 
+  const handleDeleteItem = (itemToDelete) => {
+    const newClothingItems = clothingItems.filter((item) => {
+      return item._id !== itemToDelete._id;
+    });
+
+    setClothingItems(newClothingItems);
+    closeActiveModal();
+  };
+
   useEffect(() => {
     getWeather(coordinates, APIkey)
       .then((data) => {
@@ -89,6 +98,7 @@ function App() {
           activeModal={activeModal}
           item={selectedCard}
           onClose={closeActiveModal}
+          onDeleteItem={handleDeleteItem}
         />
         <AddItemModal
           isOpen={activeModal === "add-garment"}
