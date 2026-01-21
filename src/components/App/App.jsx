@@ -1,11 +1,7 @@
 import { useEffect, useState } from "react";
-
+import { getItems, addItem, deleteItem } from "../../utils/api";
 import "./App.css";
-import {
-  coordinates,
-  APIkey,
-  defaultClothingItems,
-} from "../../utils/constants.js";
+import { coordinates, APIkey } from "../../utils/constants.js";
 import Header from "../Header/Header.jsx";
 import Main from "../Main/Main.jsx";
 import Footer from "../Footer/Footer.jsx";
@@ -21,7 +17,7 @@ function App() {
     city: "",
   });
 
-  const [clothingItems, setClothingItems] = useState(defaultClothingItems);
+  const [clothingItems, setClothingItems] = useState([]);
   const [activeModal, setActiveModal] = useState("");
   const [selectedCard, setSelectedCard] = useState({});
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
@@ -37,10 +33,13 @@ function App() {
   };
 
   const handleAddItemSubmit = (values, resetForm) => {
-    const newItem = {
-      ...values,
-      _id: Math.random().toString(36).substr(2, 9),
-    };
+    addItem(values)
+      .then((newItem) => {
+        setClothingItems([newItem, ...clothingItems]);
+        resetForm();
+        closeActiveModal();
+      })
+      .catch(console.error);
 
     setClothingItems([newItem, ...clothingItems]);
 
@@ -59,12 +58,17 @@ function App() {
   };
 
   const handleDeleteItem = (itemToDelete) => {
-    const newClothingItems = clothingItems.filter((item) => {
-      return item._id !== itemToDelete._id;
-    });
-
-    setClothingItems(newClothingItems);
-    closeActiveModal();
+    deleteItem(itemToDelete.id || itemToDelete._id) // json-server usually uses .id
+      .then(() => {
+        setClothingItems((prevItems) =>
+          prevItems.filter(
+            (item) =>
+              item.id !== itemToDelete.id && item._id !== itemToDelete._id,
+          ),
+        );
+        closeActiveModal();
+      })
+      .catch(console.error);
   };
 
   useEffect(() => {
@@ -77,7 +81,11 @@ function App() {
   }, []);
 
   useEffect(() => {
-    setClothingItems(defaultClothingItems);
+    getItems()
+      .then((data) => {
+        setClothingItems(data);
+      })
+      .catch(console.error);
   }, []);
 
   return (
