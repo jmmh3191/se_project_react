@@ -1,11 +1,20 @@
 import "./WeatherCard.css";
 import sunny from "../../images/sunny.png";
+import { useContext } from "react";
+import currentTemperatureUnitContext from "../../contexts/CurrentTemperatureUnitContext";
 
 function WeatherCard({ weatherData }) {
+  const { currentTemperatureUnit } = useContext(currentTemperatureUnitContext);
   return (
     <section className="weather-card">
       <img src={sunny} alt="sunny" className="weather-card__image" />
-      <p className="weather-card__temp"> {weatherData.temp.F} &deg; F</p>
+      <p className="weather-card__temp">
+        {" "}
+        {currentTemperatureUnit === "F"
+          ? weatherData.temp.F
+          : weatherData.temp.C}
+        &deg; {currentTemperatureUnit}
+      </p>
     </section>
   );
 }
