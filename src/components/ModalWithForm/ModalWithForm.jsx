@@ -2,7 +2,15 @@ import "./ModalWithForm.css";
 import closeIcon from "../../images/close-icon.svg";
 import { useOutsideClick } from "../../hooks/useOutsideClick";
 
-function ModalWithForm({ children, buttonText, title, isOpen, name, onClose }) {
+function ModalWithForm({
+  children,
+  buttonText,
+  title,
+  isOpen,
+  name,
+  onClose,
+  onSubmit,
+}) {
   const handleOverlayClick = useOutsideClick(onClose, isOpen);
 
   return (
@@ -18,7 +26,7 @@ function ModalWithForm({ children, buttonText, title, isOpen, name, onClose }) {
           onClick={onClose}
           type="button"
         />
-        <form className="modal__form" name={name}>
+        <form className="modal__form" onSubmit={onSubmit}>
           {children}
           <button type="submit" className="modal__garment-submit">
             {buttonText}

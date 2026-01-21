@@ -5,12 +5,12 @@ import { useForm } from "../../hooks/useForm";
 const AddItemModal = ({ isOpen, onAddItem, onCloseModal }) => {
   const { values, handleChange, setValues } = useForm({
     name: "",
-    imageUrl: "",
+    link: "",
     weather: "",
   });
 
   const handleReset = () => {
-    setValues({ name: "", imageUrl: "", weather: "" });
+    setValues({ name: "", link: "", weather: "" });
   };
 
   function handleSubmit(e) {
@@ -22,6 +22,7 @@ const AddItemModal = ({ isOpen, onAddItem, onCloseModal }) => {
     <ModalWithForm
       title="New garment"
       buttonText="Add garment"
+      name="add-garment"
       isOpen={isOpen}
       onClose={onCloseModal}
       onSubmit={handleSubmit}
@@ -44,7 +45,7 @@ const AddItemModal = ({ isOpen, onAddItem, onCloseModal }) => {
         Image
         <input
           type="url"
-          name="imageUrl"
+          name="link"
           placeholder="Image URL"
           className="modal__input"
           value={values.imageUrl}
@@ -52,7 +53,7 @@ const AddItemModal = ({ isOpen, onAddItem, onCloseModal }) => {
           required
         />
       </label>
-      <fieldset className="modal__fieldset">
+      <fieldset className="modal__radio-buttons">
         <legend className="modal__legend">Select the weather type:</legend>
         <label className="modal__label_type_radio">
           <input

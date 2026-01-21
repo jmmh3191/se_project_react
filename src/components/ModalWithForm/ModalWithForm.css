@@ -117,17 +117,22 @@
   line-height: 20px;
   color: #fff;
   background-color: rgba(0, 0, 0, 0.3);
-  opacity: 1;
   border-radius: 4px;
   border: none;
-  padding-top: 8px;
-  padding-right: 16px;
-  padding-bottom: 8px;
-  padding-left: 16px;
-  width: 124px;
+  width: 156px;
   height: 36px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
 }
 
-.modal__garment-submit:hover {
+.modal__form .modal__garment-submit:hover {
   background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modal__form .modal__garment-submit_active {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+  cursor: pointer;
 }
