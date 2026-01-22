@@ -1,7 +1,11 @@
 .modal__content {
   position: relative;
-  background-color: #fff;
-  border-radius: 20px;
+  width: calc(100% + 40px);
+  margin-top: -20px;
+  margin-left: -20px;
+  margin-right: -20px;
+  display: flex;
+  justify-content: center;
 }
 
 .modal__caption {
@@ -20,27 +24,35 @@
   line-height: 24px;
 }
 
-.modal__content_type_image {
-  border-radius: 16px;
-  overflow: hidden;
+div.modal__content.modal__content_type_image {
   padding: 0;
-  width: 100%;
-  max-width: 498px;
+}
+
+.modal__content_type_image {
+  border-radius: 20px;
+  padding: 0;
+  width: 440px;
+  max-width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
 }
 
 .modal__image {
   width: 100%;
-  display: block;
   height: auto;
+  display: block;
   object-fit: cover;
+  border-radius: 0;
 }
 
 .modal__footer {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  padding: 20px;
   background-color: #fff;
+  padding: 20px;
 }
 
 .modal__delete-btn {

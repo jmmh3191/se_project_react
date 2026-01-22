@@ -1,5 +1,5 @@
 import "./ItemModal.css";
-import { useOutsideClick } from "../../hooks/useOutsideClick";
+import { useOutsideClick } from "../../hooks/useOutsideClick.js";
 
 function ItemModal({ activeModal, onClose, item, onDeleteItem }) {
   const isModalOpen = activeModal === "preview";
