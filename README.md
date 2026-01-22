@@ -1,6 +1,6 @@
 # WTWR (What to Wear)
 
-[Live Link](https://jmmh3191.github.io/se_project_react/)
+[Repository Link](https://github.com/jmmh3191/se_project_react)
 
 ## Description
 
@@ -29,15 +29,13 @@ Stateful Modals: Interactive forms for adding garments and previewing items, fea
 
 ![App Overview](./src/images/preview-main.png)
 
+## Link to Video via Google
+
+[Video Link] (https://drive.google.com/file/d/1RIaYNt6O-bzl7JKh14PXvR93VB1Uu3Ii/view?usp=share_link)
+
 ## Getting Started
 
 1. Clone the repository.
 2. Run `npm install` to install dependencies.
 3. Run `npm run dev` to start the local server.
 4. Open `http://localhost:3000` in your browser.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
