@@ -1,6 +1,5 @@
 @import url("./vendor/fonts.css");
 @import url(./vendor/normalize.css);
-@import "./components/Footer.css";
 
 * {
   box-sizing: border-box;
