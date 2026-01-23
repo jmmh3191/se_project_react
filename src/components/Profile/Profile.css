@@ -1,0 +1,8 @@
+.profile {
+  display: flex;
+  padding: 0;
+  gap: 20px;
+}
+.profile__content {
+  flex-grow: 1;
+}
