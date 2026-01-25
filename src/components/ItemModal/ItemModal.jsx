@@ -16,7 +16,7 @@ function ItemModal({ activeModal, onClose, item, onDeleteItem }) {
           type="button"
           className="modal__close-btn"
         ></button>
-        <img src={item.link} alt={item.name} className="modal__image" />
+        <img src={item.imageUrl} alt={item.name} className="modal__image" />
         <div className="modal__footer">
           <div className="modal__footer-text">
             <h2 className="modal__caption">{item.name}</h2>

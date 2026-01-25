@@ -56,15 +56,15 @@ function App() {
   };
 
   const handleDeleteItem = (card) => {
-    deleteItem(card.id)
-      .then(() => {
-        const updatedItems = clothingItems.filter((item) => {
-          return item.id !== card.id;
-        });
-        setClothingItems(updatedItems);
-        closeActiveModal();
-      })
-      .catch(console.error);
+    const id = card._id || card.id;
+
+    deleteItem(id).then(() => {
+      const updatedItems = clothingItems.filter((item) => {
+        return (item._id || item.id) !== id;
+      });
+      setClothingItems(updatedItems);
+      closeActiveModal();
+    });
   };
 
   useEffect(() => {

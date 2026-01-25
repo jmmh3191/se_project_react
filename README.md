@@ -38,4 +38,4 @@ Stateful Modals: Interactive forms for adding garments and previewing items, fea
 1. Clone the repository.
 2. Run `npm install` to install dependencies.
 3. Run `npm run dev` to start the local server.
-4. Open `http://localhost:3000` in your browser.
+4. On a second terminal, run npm install -g json-server@^0 & then json-server --watch db.json --id \_id --port 3001

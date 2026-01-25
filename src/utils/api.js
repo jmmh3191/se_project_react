@@ -1,6 +1,6 @@
 export const baseUrl = "http://localhost:3001";
 
-const checkResponse = (res) => {
+export const checkResponse = (res) => {
   if (res.ok) {
     return res.json();
   }
@@ -11,13 +11,13 @@ export const getItems = () => {
   return fetch(`${baseUrl}/items`).then(checkResponse);
 };
 
-export const addItem = ({ name, link, weather }) => {
+export const addItem = ({ name, imageUrl, weather }) => {
   return fetch(`${baseUrl}/items`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
       name,
-      link,
+      imageUrl,
       weather,
     }),
   }).then(checkResponse);

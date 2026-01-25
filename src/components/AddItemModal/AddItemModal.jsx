@@ -24,7 +24,7 @@ const AddItemModal = ({ isOpen, onAddItem, onCloseModal }) => {
     }
   }, [isOpen]);
 
-  const isFormValid = values.name && values.link && values.weather;
+  const isFormValid = values.name && values.imageUrl && values.weather;
 
   return (
     <ModalWithForm
@@ -54,7 +54,7 @@ const AddItemModal = ({ isOpen, onAddItem, onCloseModal }) => {
         Image
         <input
           type="url"
-          name="link"
+          name="imageUrl"
           placeholder="Image URL"
           className="modal__input"
           value={values.link}
