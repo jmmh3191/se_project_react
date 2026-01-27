@@ -77,11 +77,15 @@ function App() {
   }, []);
 
   useEffect(() => {
-    getItems()
-      .then((data) => {
-        setClothingItems(data);
-      })
-      .catch(console.error);
+    getItems().then((data) => {
+      const itemsWithImageUrl = data.map((item) => {
+        return {
+          ...item,
+          imageUrl: item.link,
+        };
+      });
+      setClothingItems(itemsWithImageUrl);
+    });
   }, []);
 
   return (
