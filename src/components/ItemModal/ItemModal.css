@@ -41,6 +41,7 @@ div.modal__content.modal__content_type_image {
 
 .modal__image {
   width: 100%;
+  max-height: 498px;
   height: auto;
   display: block;
   object-fit: cover;
