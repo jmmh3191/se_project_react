@@ -5,12 +5,12 @@ import { useForm } from "../../hooks/useForm.js";
 const AddItemModal = ({ isOpen, onAddItem, onCloseModal }) => {
   const { values, handleChange, setValues } = useForm({
     name: "",
-    link: "",
+    imageUrl: "",
     weather: "",
   });
 
   const handleReset = () => {
-    setValues({ name: "", link: "", weather: "" });
+    setValues({ name: "", imageUrl: "", weather: "" });
   };
 
   function handleSubmit(e) {
